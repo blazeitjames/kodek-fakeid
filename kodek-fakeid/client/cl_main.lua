@@ -345,6 +345,10 @@ end)
 
 -- Event for creating a fake ID
 RegisterNetEvent('fakeid:create', function(firstname, lastname, sex, dob, nationality)
+    if QBX.PlayerData.money.cash < Kodek.FakeIDPrice then
+        exports.qbx_core:Notify("You do not have enough cash.", 'error', 5000)
+        return
+    end
     if hasRequiredItems() then
         -- Remove the required items from player's inventory
         for _, itemData in ipairs(Kodek.RequiredItems) do
@@ -354,7 +358,6 @@ RegisterNetEvent('fakeid:create', function(firstname, lastname, sex, dob, nation
 
         -- Proceed with ID creation logic (assuming server handles ID creation)
         TriggerServerEvent("fakeid:forgeid", firstname, lastname, sex, dob, nationality)
-        exports.qbx_core:Notify("Fake ID created successfully!", 'success', 5000)
     else
         exports.qbx_core:Notify("You do not have the required items to create a fake ID.", 'error', 5000)
     end
@@ -446,6 +449,10 @@ end)
 
 -- Event for creating a fake DL
 RegisterNetEvent('fakedl:create', function(firstname, lastname, sex, dob, nationality)
+    if QBX.PlayerData.money.cash < Kodek.FakeDLPrice then
+        exports.qbx_core:Notify("You do not have enough cash.", 'error', 5000)
+        return
+    end
     if hasRequiredItems() then
         -- Remove the required items from player's inventory
         for _, itemData in ipairs(Kodek.RequiredItems) do
@@ -455,7 +462,6 @@ RegisterNetEvent('fakedl:create', function(firstname, lastname, sex, dob, nation
 
         -- Proceed with DL creation logic (assuming server handles DL creation)
         TriggerServerEvent("fakeid:forgedl", firstname, lastname, sex, dob, nationality)
-        exports.qbx_core:Notify("Fake DL created successfully!", 'success', 5000)
     else
         exports.qbx_core:Notify("You do not have the required items to create a fake DL.", 'error', 5000)
     end
@@ -547,6 +553,10 @@ end)
 
 -- Event for creating a fake WL
 RegisterNetEvent('fakewl:create', function(firstname, lastname, sex, dob, nationality)
+    if QBX.PlayerData.money.cash < Kodek.FakeWLPrice then
+        exports.qbx_core:Notify("You do not have enough cash.", 'error', 5000)
+        return
+    end
     if hasRequiredItems() then
         -- Remove the required items from player's inventory
         for _, itemData in ipairs(Kodek.RequiredItems) do
@@ -556,7 +566,6 @@ RegisterNetEvent('fakewl:create', function(firstname, lastname, sex, dob, nation
 
         -- Proceed with WL creation logic (assuming server handles WL creation)
         TriggerServerEvent("fakeid:forgewl", firstname, lastname, sex, dob, nationality)
-        exports.qbx_core:Notify("Fake WL created successfully!", 'success', 5000)
     else
         exports.qbx_core:Notify("You do not have the required items to create a fake WL.", 'error', 5000)
     end
@@ -648,6 +657,10 @@ end)
 
 -- Event for creating a fake LP
 RegisterNetEvent('fakelp:create', function(firstname, lastname, sex, dob, nationality)
+    if QBX.PlayerData.money.cash < Kodek.FakeLPPrice then
+        exports.qbx_core:Notify("You do not have enough cash.", 'error', 5000)
+        return
+    end
     if hasRequiredItems() then
         -- Remove the required items from player's inventory
         for _, itemData in ipairs(Kodek.RequiredItems) do
@@ -657,7 +670,6 @@ RegisterNetEvent('fakelp:create', function(firstname, lastname, sex, dob, nation
 
         -- Proceed with LP creation logic (assuming server handles LP creation)
         TriggerServerEvent("fakeid:forgelp", firstname, lastname, sex, dob, nationality)
-        exports.qbx_core:Notify("Fake LP created successfully!", 'success', 5000)
     else
         exports.qbx_core:Notify("You do not have the required items to create a fake LP.", 'error', 5000)
     end
@@ -749,6 +761,10 @@ end)
 
 -- Event for creating a fake HL
 RegisterNetEvent('fakehl:create', function(firstname, lastname, sex, dob, nationality)
+    if QBX.PlayerData.money.cash < Kodek.FakeHLPrice then
+        exports.qbx_core:Notify("You do not have enough cash.", 'error', 5000)
+        return
+    end
     if hasRequiredItems() then
         -- Remove the required items from player's inventory
         for _, itemData in ipairs(Kodek.RequiredItems) do
@@ -758,7 +774,6 @@ RegisterNetEvent('fakehl:create', function(firstname, lastname, sex, dob, nation
 
         -- Proceed with HL creation logic (assuming server handles HL creation)
         TriggerServerEvent("fakeid:forgehl", firstname, lastname, sex, dob, nationality)
-        exports.qbx_core:Notify("Fake HL created successfully!", 'success', 5000)
     else
         exports.qbx_core:Notify("You do not have the required items to create a fake HL.", 'error', 5000)
     end
@@ -850,6 +865,10 @@ end)
 
 -- Event for creating a fake FL
 RegisterNetEvent('fakefl:create', function(firstname, lastname, sex, dob, nationality)
+    if QBX.PlayerData.money.cash < Kodek.FakeFLPrice then
+        exports.qbx_core:Notify("You do not have enough cash.", 'error', 5000)
+        return
+    end
     if hasRequiredItems() then
         -- Remove the required items from player's inventory
         for _, itemData in ipairs(Kodek.RequiredItems) do
@@ -859,7 +878,6 @@ RegisterNetEvent('fakefl:create', function(firstname, lastname, sex, dob, nation
 
         -- Proceed with FL creation logic (assuming server handles FL creation)
         TriggerServerEvent("fakeid:forgefl", firstname, lastname, sex, dob, nationality)
-        exports.qbx_core:Notify("Fake FL created successfully!", 'success', 5000)
     else
         exports.qbx_core:Notify("You do not have the required items to create a fake FL.", 'error', 5000)
     end
